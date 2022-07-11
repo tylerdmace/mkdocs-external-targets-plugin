@@ -6,8 +6,7 @@ from mkdocs.plugins import BasePlugin
 from mkdocs.structure.pages import Page
 
 class ExternalTargets(BasePlugin):
-  def on_post_template(self, content, content_name, **kwargs):
-    print(content_name)
+  def on_post_template(self, content, **kwargs):
     print(content)
     return content
 
