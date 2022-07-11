@@ -18,6 +18,7 @@ def cleanExternalLinks(content):
 
 class ExternalTargets(BasePlugin):
   def on_post_template(self, content, **kwargs):
+    print(content)
     return cleanExternalLinks(content)
 
   def on_page_content(self, content, **kwargs):
