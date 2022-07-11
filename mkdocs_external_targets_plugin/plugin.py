@@ -6,6 +6,11 @@ from mkdocs.plugins import BasePlugin
 from mkdocs.structure.pages import Page
 
 class ExternalTargets(BasePlugin):
+  def on_post_template(self, content, content_name, **kwargs):
+    print(content_name)
+    print(content)
+    return content
+
   def on_page_content(self, content, **kwargs):
     html = BeautifulSoup(content, features = "html5lib")
     anchors = html.find_all('a')
