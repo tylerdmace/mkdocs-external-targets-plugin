@@ -7,7 +7,7 @@ from mkdocs.structure.pages import Page
 
 class ExternalTargets(BasePlugin):
   def on_page_content(self, content, **kwargs):
-    html = BeautifulSoup(content, 'html5libs')
+    html = BeautifulSoup(content)
     anchors = html.find_all('a')
     
     for anchor in anchors:
