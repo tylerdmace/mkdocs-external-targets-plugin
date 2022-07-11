@@ -1,0 +1,1 @@
+# mkdocs-external-targets-plugin
