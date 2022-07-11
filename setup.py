@@ -11,7 +11,7 @@ setup(
     description="Mkdocs plugin to convert absolute paths to Webcontext aware paths.",
     entry_points={
         "mkdocs.plugins": [
-            "external_targets = mkdocs_external_targets_plugin:ExternalTargets"
+            "external-targets = mkdocs_external_targets_plugin:ExternalTargets"
         ]
     }
 )

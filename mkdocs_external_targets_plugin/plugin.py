@@ -7,10 +7,11 @@ from mkdocs.structure.pages import Page
 
 class ExternalTargets(BasePlugin):
   def on_page_content(self, content, **kwargs):
-    html = BeautifulSoup(content)
+    html = BeautifulSoup(content, 'html5libs')
     anchors = html.find_all('a')
     
     for anchor in anchors:
-      anchor["target"] = "_blank"
+      if anchor["href"].find('http') != -1:
+        anchor["target"] = "_blank"
 
     return html
