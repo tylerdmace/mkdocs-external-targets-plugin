@@ -1,4 +1,4 @@
-import xml
+import uuid
 from bs4 import BeautifulSoup
 
 from mkdocs import utils as mkdocs_utils
@@ -11,6 +11,13 @@ def cleanExternalLinks(content):
   anchors = html.find_all('a')
 
   for anchor in anchors:
+    if len(anchor["href"].split("?")) > 1:
+      anchor["href"] += "&"
+    else:
+      anchor["href"] += "?"
+
+    anchor["href"] += f'cb={uuid.uuid4()}'
+
     if anchor["href"].find('http') != -1:
       anchor["target"] = "_blank"
 
